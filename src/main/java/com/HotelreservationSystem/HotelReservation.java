@@ -19,6 +19,7 @@ public class HotelReservation {
         customer = " ";
     }
     
+    //constructor
     public HotelReservation(String hotel,String customer){
         this.hotel = hotel;
         this.customer = customer;
@@ -70,7 +71,8 @@ public class HotelReservation {
 	
 	/**
 	 * Created method to 
-	 * 
+	 * Calculate weekdays rate and weekend rates of 
+	 * regular customer of hotel
 	 */
 	public void weekday_weekend_rate(){
         if (hotel == "LakeWood") {
