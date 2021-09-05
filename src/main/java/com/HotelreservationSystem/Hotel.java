@@ -3,7 +3,7 @@ package com.HotelreservationSystem;
 /**
  * Constructor Class for the Hotel Reservation system
  * @author Sheetal
- * @since 2021-09-02
+ * @since 2021-09-04
  */
 public class Hotel {
 	
