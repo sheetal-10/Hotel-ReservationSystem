@@ -12,17 +12,35 @@ import java.util.Date;
  */
 public class HotelReservation {
 	
-	// ArrayList to store Hotel List
-	public ArrayList<Hotel> hotelList = new ArrayList<Hotel>();
-
+	String hotel;
+    String customer;
+    public HotelReservation(){
+        hotel = " ";
+        customer = " ";
+    }
+    
+    public HotelReservation(String hotel,String customer){
+        this.hotel = hotel;
+        this.customer = customer;
+    }
+    
 	/**
 	 * Created a method addHotelDetails to 
-	 * add the hotels in the array list
+	 * add the hotels and their details
 	 */
 	public void addHotelDetails() {
-		hotelList.add(new Hotel("Lakewood", 110));
-		hotelList.add(new Hotel("Bridgewood", 160));
-		hotelList.add(new Hotel("Ridgewood", 220));
+		if (hotel == "LakeWood") {
+            int rate = 110;
+            System.out.println("Rate of Regular Customers of LakeWood Hotel:" + rate);
+        }
+        if (hotel == "BridgeWood") {
+            int rate = 160;
+            System.out.println("Rate of Regular Customers of BridgeWood Hotel:" + rate);
+        }
+        if (hotel == "RidgeWood") {
+            int rate = 220;
+            System.out.println("Rate of Regular Customers of RidgeWood Hotel:" + rate);
+        }
 	}
 
 	/**
@@ -49,6 +67,31 @@ public class HotelReservation {
 			System.out.println(RidgeWood_Rate);
 		}
 	}
+	
+	/**
+	 * Created method to 
+	 * 
+	 */
+	public void weekday_weekend_rate(){
+        if (hotel == "LakeWood") {
+            int weekday_rate = 110;
+            int weekend_rate = 90;
+            System.out.println("Weekday Rate of Regular Customers of LakeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of LakeWood Hotel:" + weekend_rate);
+        }
+        if (hotel == "BridgeWood") {
+            int weekday_rate = 150;
+            int weekend_rate = 50;
+            System.out.println("Weekday Rate of Regular Customers of BridgeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of BridgeWood Hotel:" + weekend_rate);
+        }
+        if (hotel == "RidgeWood") {
+            int weekday_rate = 220;
+            int weekend_rate = 150;
+            System.out.println("Weekday Rate of Regular Customers of RidgeWood Hotel:" + weekday_rate);
+            System.out.println("Weekend Rate of Regular Customers of RidgeWood Hotel:" + weekend_rate);
+        }
+    }
 
 	/**
 	 * Main method to print welcome message and 
@@ -60,13 +103,11 @@ public class HotelReservation {
 	public static void main(String[] args) throws ParseException {
 		// welcome message
 		System.out.println("Welcome to Hotel Reservation System");
-		String sDate1 = "23-09-2020";
-		String sDate2 = "25-09-2020";
-		Date date1 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
-		Date date2 = new SimpleDateFormat("dd-MM-yyyy").parse(sDate2);
-		System.out.println(sDate1 + "\t" + date1);
-		System.out.println(sDate2 + "\t" + date2);
-		HotelReservation hotel = new HotelReservation();
-		hotel.cheapestHotel();
+		HotelReservation Lakewood = new HotelReservation("LakeWood","Regular");
+        HotelReservation Bridgewood = new HotelReservation("BridgeWood","Regular");
+        HotelReservation Ridgewood = new HotelReservation("RidgeWood","Regular");
+		Lakewood.weekday_weekend_rate();;
+		Bridgewood.weekday_weekend_rate();
+		Ridgewood.weekday_weekend_rate();
 	}
 }
