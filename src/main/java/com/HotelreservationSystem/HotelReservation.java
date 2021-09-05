@@ -74,7 +74,7 @@ public class HotelReservation {
 	 * Calculate weekdays rate and weekend rates of 
 	 * regular customer of hotel
 	 */
-	public void weekday_weekend_rate(){
+	public void weekdayWeekendRate(){
         if (hotel == "LakeWood") {
             int weekday_rate = 110;
             int weekend_rate = 90;
@@ -94,11 +94,48 @@ public class HotelReservation {
             System.out.println("Weekend Rate of Regular Customers of RidgeWood Hotel:" + weekend_rate);
         }
     }
+	
+	/**
+	 * Created method to 
+	 * show cheapest hotel on given date range
+	 * based on weekday rates and weekend rates
+	 */
+	public void cheapestWeekdayWeekendHotel(){
+        int sum_LakeWood = 0,sum_BridgeWood = 0, sum_RidgeWood = 0;
+        if (hotel == "LakeWood") {
+            int weekday_rate = 110;
+            int weekend_rate = 90;
+            sum_LakeWood = (sum_LakeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of LakeWood Hotel:" + sum_LakeWood);
+        }
+        if (hotel == "BridgeWood") {
+            int weekday_rate = 150;
+            int weekend_rate = 50;
+            sum_BridgeWood = (sum_BridgeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of BridgeWood Hotel:" + sum_BridgeWood);
+        }
+        if (hotel == "RidgeWood") {
+            int weekday_rate = 220;
+            int weekend_rate = 150;
+            sum_RidgeWood = (sum_RidgeWood+weekday_rate+weekend_rate);
+            System.out.println("Total Weekday and Weekend rate of RidgeWood Hotel:" + sum_RidgeWood);
+        }
+        if (sum_LakeWood<=sum_BridgeWood && sum_LakeWood<sum_RidgeWood){
+            System.out.println("LakeWood and BridgeWood with total rates $200.");
+        }
+        if (sum_BridgeWood<=sum_LakeWood && sum_BridgeWood<sum_RidgeWood){
+            System.out.println("LakeWood and BridgeWood with total rates $200.");
+        }
+        if (sum_RidgeWood<sum_LakeWood && sum_RidgeWood<sum_BridgeWood){
+            System.out.println("RidgeWood with total rates $370.");
+        }
+    }
 
 	/**
 	 * Main method to print welcome message and 
-	 * cheapest hotel method and 
-	 * displaying cheapest hotel in the given date duration
+	 * cheapest hotel method and all other methods 
+	 * displaying cheapest hotel in the given date duration and 
+	 * displaying the rates of different hotels on different days
 	 * @param args unused
 	 * @throws ParseException
 	 */
@@ -108,8 +145,14 @@ public class HotelReservation {
 		HotelReservation Lakewood = new HotelReservation("LakeWood","Regular");
         HotelReservation Bridgewood = new HotelReservation("BridgeWood","Regular");
         HotelReservation Ridgewood = new HotelReservation("RidgeWood","Regular");
-		Lakewood.weekday_weekend_rate();;
-		Bridgewood.weekday_weekend_rate();
-		Ridgewood.weekday_weekend_rate();
+        String sDate1="10-09-2020";
+        String sDate2="11-09-2020";
+        Date date1=new SimpleDateFormat("dd-MM-yyyy").parse(sDate1);
+        Date date2=new SimpleDateFormat("dd-MM-yyyy").parse(sDate2);
+        System.out.println(sDate1+"\t"+date1);
+        System.out.println(sDate2+"\t"+date2);
+		Lakewood.cheapestWeekdayWeekendHotel();
+		Bridgewood.cheapestWeekdayWeekendHotel();
+		Ridgewood.cheapestWeekdayWeekendHotel();
 	}
 }

@@ -23,8 +23,15 @@ public class HotelReservationSystemTest {
 
 	@Test
 	public void toCheck_Weekday_Weekend_Rate() {
-		addHotel1.weekday_weekend_rate();
-		addHotel2.weekday_weekend_rate();
-		addHotel3.weekday_weekend_rate();
+		addHotel1.weekdayWeekendRate();
+		addHotel2.weekdayWeekendRate();
+		addHotel3.weekdayWeekendRate();
 	}
+	
+	 @Test
+	    public void toCheck_Cheapest_Weekday_Weekend_Hotel() {
+	        addHotel1.cheapestWeekdayWeekendHotel();
+	        addHotel2.cheapestWeekdayWeekendHotel();
+	        addHotel3.cheapestWeekdayWeekendHotel();
+	    }
 }
