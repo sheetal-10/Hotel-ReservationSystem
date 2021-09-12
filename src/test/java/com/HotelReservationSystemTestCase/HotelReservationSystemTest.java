@@ -27,11 +27,18 @@ public class HotelReservationSystemTest {
 		addHotel2.weekdayWeekendRate();
 		addHotel3.weekdayWeekendRate();
 	}
-	
+
+	@Test
+	public void toCheck_Cheapest_Weekday_Weekend_Hotel() {
+		addHotel1.cheapestWeekdayWeekendHotel();
+		addHotel2.cheapestWeekdayWeekendHotel();
+		addHotel3.cheapestWeekdayWeekendHotel();
+	}
+
 	 @Test
-	    public void toCheck_Cheapest_Weekday_Weekend_Hotel() {
-	        addHotel1.cheapestWeekdayWeekendHotel();
-	        addHotel2.cheapestWeekdayWeekendHotel();
-	        addHotel3.cheapestWeekdayWeekendHotel();
+	    public void toCheck_hotelRating() {
+	        addHotel1.hotelRating();
+	        addHotel2.hotelRating();
+	        addHotel3.hotelRating();
 	    }
 }

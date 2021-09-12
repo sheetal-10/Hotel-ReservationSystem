@@ -130,6 +130,22 @@ public class HotelReservation {
             System.out.println("RidgeWood with total rates $370.");
         }
     }
+	
+	/**
+	 * Created method to
+	 * add ratings to hotels
+	 */
+	public void hotelRating(){
+        if (hotel == "LakeWood"){
+            System.out.println("LakeWood rating is 3.");
+        }
+        if (hotel == "BridgeWood"){
+            System.out.println("LakeWood rating is 4.");
+        }
+        if (hotel == "RidgeWood"){
+            System.out.println("LakeWood rating is 5.");
+        }
+    }
 
 	/**
 	 * Main method to print welcome message and 
@@ -154,5 +170,8 @@ public class HotelReservation {
 		Lakewood.cheapestWeekdayWeekendHotel();
 		Bridgewood.cheapestWeekdayWeekendHotel();
 		Ridgewood.cheapestWeekdayWeekendHotel();
+		Lakewood.hotelRating();
+		Bridgewood.hotelRating();
+		Ridgewood.hotelRating();
 	}
 }
