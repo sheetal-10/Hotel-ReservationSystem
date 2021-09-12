@@ -205,6 +205,6 @@ public class HotelReservation {
 		Bridgewood.hotelRating();
 		Ridgewood.hotelRating();
         //cheapest hotel
-        Bridgewood.cheapestBestRatedHotel();
+      //  Bridgewood.cheapestBestRatedHotel();
 	}
 }
