@@ -41,4 +41,9 @@ public class HotelReservationSystemTest {
 	        addHotel2.hotelRating();
 	        addHotel3.hotelRating();
 	    }
+	 
+	 @Test
+	    public void toCheck_cheapest_bestRated_hotel() {
+	        addHotel2.cheapestBestRatedHotel();
+	    }
 }

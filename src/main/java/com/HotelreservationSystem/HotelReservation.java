@@ -146,6 +146,36 @@ public class HotelReservation {
             System.out.println("LakeWood rating is 5.");
         }
     }
+	
+	/**
+	 * Created method to 
+	 * find cheapest hotel with 
+	 * best rating in a given date range
+	 */
+	public void cheapestBestRatedHotel(){
+        int sum_LakeWood = 0,sum_BridgeWood = 0, sum_RidgeWood = 0;
+        int LakeWood_Rate =3, BridgeWood_Rate=4, RidgeWood_Rate=5;
+        if (hotel == "LakeWood") {
+            int weekday_rate = 110;
+            int weekend_rate = 90;
+            sum_LakeWood = (sum_LakeWood+weekday_rate+weekend_rate);
+        }
+        if (hotel == "BridgeWood") {
+            int weekday_rate = 150;
+            int weekend_rate = 50;
+            sum_BridgeWood = (sum_BridgeWood+weekday_rate+weekend_rate);
+        }
+        if (hotel == "RidgeWood") {
+            int weekday_rate = 220;
+            int weekend_rate = 150;
+            sum_RidgeWood = (sum_RidgeWood+weekday_rate+weekend_rate);
+        }
+        if ((sum_BridgeWood<=sum_LakeWood && sum_BridgeWood<sum_RidgeWood) && (LakeWood_Rate<BridgeWood_Rate && BridgeWood_Rate<RidgeWood_Rate)){
+            System.out.println("BridgeWood");
+            System.out.println("Rating:"+BridgeWood_Rate);
+            System.out.println("Total Rates: $"+sum_BridgeWood);
+        }
+    }
 
 	/**
 	 * Main method to print welcome message and 
@@ -170,8 +200,11 @@ public class HotelReservation {
 		Lakewood.cheapestWeekdayWeekendHotel();
 		Bridgewood.cheapestWeekdayWeekendHotel();
 		Ridgewood.cheapestWeekdayWeekendHotel();
+		//hotel ratings
 		Lakewood.hotelRating();
 		Bridgewood.hotelRating();
 		Ridgewood.hotelRating();
+        //cheapest hotel
+        Bridgewood.cheapestBestRatedHotel();
 	}
 }
